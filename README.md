@@ -1,6 +1,6 @@
 # cypress-pom-ci-cd
 
-# Description:
+Markup :  __Strong text__ or **Description**
 
 Welcome to the cypress-pom-ci-cd repository! This project is a comprehensive example of using Cypress for end-to-end testing, incorporating the Page Object Model (POM) design pattern for maintainability, and integrating continuous integration and continuous deployment (CI/CD) pipelines for seamless automation.
 
