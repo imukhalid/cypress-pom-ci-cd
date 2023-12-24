@@ -1,11 +1,30 @@
 {
   "name": "cypress-pom-ci-cd",
   "version": "1.0.0",
-  "description": "This project is a comprehensive example of using Cypress for end-to-end testing, incorporating the Page Object Model (POM) design pattern for maintainability, and integrating continuous integration and continuous deployment (CI/CD) pipelines for seamless automation.",
+  "description": "This project demonstrates Cypress for end-to-end testing, applying the Page Object Model (POM) for maintainability, and integrates CI/CD pipelines for automation.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "test:smoke": "npx cypress run --env grepTags=@smoke --spec cypress/e2e/FE/*.cy.js",
+    "cypress:open:staging": "npx cypress open --config-file config/staging.config.js",
+    "cypress:run:staging": "npx cypress run --config-file config/staging.config.js",
+    "cypress:open:prod": "npx cypress open --config-file config/production.config.js",
+    "cypress:run:prod": "npx cypress run --config-file config/production.config.js",
+    "cypress:open:smoke:staging": "npx cypress open --config-file config/staging.config.js --env grepTags=@smoke",
+    "cypress:run:smoke:staging": "npx cypress run --config-file config/staging.config.js --env grepTags=@smoke --spec cypress/e2e/FE/*.cy.js",
+    "cypress:open:smoke:prod": "npx cypress open --config-file config/production.config.js --env grepTags=@smoke",
+    "cypress:run:smoke:prod": "npx cypress run --config-file config/production.config.js --env grepTags=@smoke --spec cypress/e2e/FE/*.cy.js",
+    "test:prod:mobile": "npx cypress open --config-file config/production.config.js --config viewportWidth=375,viewportHeight=667",
+    "test:staging:mobile": "npx cypress open --config-file config/staging.config.js --config viewportWidth=375,viewportHeight=667",
+    "test:prod:tablet": "npx cypress open --config-file config/production.config.js --config viewportWidth=768,viewportHeight=1024",
+    "test:staging:tablet": "npx cypress open --config-file config/staging.config.js --config viewportWidth=768,viewportHeight=1024"
   },
   "author": "Usama Khalid",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/grep": "^4.0.1",
+    "cypress": "^13.6.1",
+    "cypress-mochawesome-reporter": "^3.7.0",
+    "run": "^1.4.0"
+  }
 }

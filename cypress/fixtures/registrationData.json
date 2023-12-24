@@ -1,0 +1,19 @@
+{
+  "validUser": {
+    "firstName": "User First Name",
+    "lastName": "User Last Name",
+    "email": "testuser@example.com",
+    "phone": "1234567890",
+    "password": "password123",
+    "confirmPassword": "password123",
+    "newsLetter": "Yes",
+    "acceptTerms": true
+  },
+  "invalidUser": {
+    "username": "invaliduser",
+    "email": "invaliduser@example.com",
+    "password": "password123",
+    "confirmPassword": "wrongpassword",
+    "acceptTerms": false
+  }
+}
