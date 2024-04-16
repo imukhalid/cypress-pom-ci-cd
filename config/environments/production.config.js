@@ -1,23 +1,10 @@
 const { defineConfig } = require("cypress");
+const sharedConfig = require('../../cypress.config');
 
 module.exports = defineConfig({
     reporter: 'cypress-mochawesome-reporter',
     e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-            require('cypress-mochawesome-reporter/plugin')(on);
-            require('@cypress/grep/src/plugin')(config);
-            return config;
-        },
+        ...sharedConfig.e2e,
         baseUrl: 'https://naveenautomationlabs.com/opencart',
-        execTimeout: 18000,
-        defaultCommandTimeout: 300000,
-        requestTimeout: 10000,
-        pageLoadTimeout: 30000,
-        responseTimeout: 10000,
-        retries: {
-            runMode: 1,
-            openMode: 2
-        }
     },
 });
